@@ -4,31 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- CSS file goes here -->
+    <link rel="stylesheet" href="./styles.css">
   </head>
 
   <body>
     <!-- Header Section -->
-    <header>
+    <header class="page-title">
       <h1>Tienda de Muebles</h1>
     </header>
-    <nav>
+    <nav class="navigation">
       <a href="./index.html">
-        <img src="https://placehold.co/150x25/32a850/FFFFFF?text=Logo" alt="page-logo">
+        <img 
+          src="https://placehold.co/1280x720/32a850/FFFFFF?text=Logo" 
+          alt="page-logo"
+          class="nav-logo"
+        >
       </a>
-      <ul>
-        <li><a>Inicio</a></li>
-        <li><a>Nosotros</a></li>
-        <li><a>Tienda</a></li>
-        <li><a>Galeria</a></li>
-        <li><a>Contacto</a></li>
+      <ul class="nav-menu">
+        <li><a href="#" class="nav-btn">Inicio</a></li>
+        <li><a href="#" class="nav-btn">Nosotros</a></li>
+        <li><a href="#" class="nav-btn">Tienda</a></li>
+        <li><a href="#" class="nav-btn">Galeria</a></li>
+        <li><a href="#" class="nav-btn">Contacto</a></li>
       </ul>
       <div>
-        <input type="text" placeholder="Search...">
-        <button>Search</button>
+        <input 
+          type="text" 
+          placeholder="Type here..."
+          class="nav-search"
+        >
+        <button class="search-btn">Search</button>
       </div>
     </nav>
     <section>
-      <img src="https://placehold.co/1920x1080/5c5c5c/FFFFFF?text=Hero\nImage" alt="hero-image">
+      <img 
+        src="https://placehold.co/1920x720/5c5c5c/FFFFFF?text=Hero\nImage"
+        alt="hero-image"
+        class="hero-image"
+      >
     </section>
 
     <!-- Main Section -->
