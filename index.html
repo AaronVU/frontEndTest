@@ -17,7 +17,7 @@
   <body>
     <!-- Header Section -->
     <header class="page-title">
-      <h1>Tienda de Muebles</h1>
+      <h1>Tienda de <span class="key-word">Muebles</span></h1>
     </header>
 
     <nav class="navigation">
@@ -30,9 +30,11 @@
       </a>
       <!-- Hamburger Menu -->
       <div>
-        <button><i class="fa-solid fa-bars" style="color: rgb(255, 255, 255);"></i></button>
+        <button class="hamburger-btn" id="hamburger-btn">
+          <span class="hamburger-icon"></span>
+        </button>
       </div>
-      <ul class="nav-menu">
+      <ul class="nav-menu" id="nav-menu">
         <li><a href="#" class="nav-btn">Inicio</a></li>
         <li><a href="#" class="nav-btn">Nosotros</a></li>
         <li><a href="#" class="nav-btn">Tienda</a></li>
@@ -48,15 +50,15 @@
         <button class="search-btn">Search</button>
       </div>
     </nav>
-
     <section>
       <img 
-        src="https://placehold.co/1920x1080/5c5c5c/FFFFFF?text=Hero\nImage"
-        alt="hero-image"
-        class="hero-img"
+      src="./img/principal.jpg"
+      alt="hero-image"
+      class="hero-img"
       >
     </section>
-
+    
+    
     <!-- Main Section 
     <main>
       <h2 class="subtitle">Nuestros producto</h2>
@@ -229,5 +231,7 @@
         <h2 class="copy-text">Todos los derechos reservados. Tienda de Muebles</h2>
       </section>
     </footer> -->
+
+    <script src="./main.js"></script>
   </body>
 </html>
