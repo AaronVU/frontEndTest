@@ -3,240 +3,286 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page</title>
+    <title>Tienda de Muebles</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-    <!-- CSS file goes here -->
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="./styles.css">
   </head>
 
-  <body>
+  <body class="d-flex flex-column min-vh-100">
     <!-- Header Section -->
-    <header class="page-title">
-      <h1>Tienda de <span class="key-word">Muebles</span></h1>
+    <header class="py-3 text-center">
+      <h1 class="mb-0">Tienda de <span class="key-word">Muebles</span></h1>
     </header>
 
-    <nav class="navigation">
-      <a href="./index.html">
-        <img 
-          src="https://placehold.co/1280x720/32a850/FFFFFF?text=Logo" 
-          alt="page-logo"
-          class="nav-logo"
+    <!-- Bootstrap Responsive Navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark custom-bg-primary px-3 py-2">
+      <div class="container-fluid">
+        <!-- Logo -->
+        <a class="navbar-brand" href="./index.html">
+          <img 
+            src="https://placehold.co/1280x720/32a850/FFFFFF?text=Logo" 
+            alt="page-logo"
+            class="nav-logo rounded-4"
+          >
+        </a>
+
+        <button 
+          class="navbar-toggler" 
+          type="button" 
+          data-bs-toggle="collapse" 
+          data-bs-target="#navbarContent" 
+          aria-controls="navbarContent" 
+          aria-expanded="false" 
+          aria-label="Toggle navigation"
         >
-      </a>
-      <!-- Hamburger Menu -->
-      <div>
-        <button class="hamburger-btn" id="hamburger-btn">
-          <span class="hamburger-icon"></span>
+          <span class="navbar-toggler-icon"></span>
         </button>
-      </div>
-      <ul class="nav-menu" id="nav-menu">
-        <li><a href="#" class="nav-btn">Inicio</a></li>
-        <li><a href="#" class="nav-btn">Nosotros</a></li>
-        <li><a href="#" class="nav-btn">Tienda</a></li>
-        <li><a href="#" class="nav-btn">Galeria</a></li>
-        <li><a href="#" class="nav-btn">Contacto</a></li>
-      </ul>
-      <div>
-        <input 
-          type="text" 
-          placeholder="Type here..."
-          class="nav-search"
-        >
-        <button class="search-btn">Search</button>
+
+        <!-- Collapsible Menu & Search -->
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav mx-auto mb-2 mb-md-0 gap-md-4 gap-lg-5 text-center">
+            <li class="nav-item"><a href="#" class="nav-link text-white">Inicio</a></li>
+            <li class="nav-item"><a href="#" class="nav-link text-white">Nosotros</a></li>
+            <li class="nav-item"><a href="#" class="nav-link text-white">Tienda</a></li>
+            <li class="nav-item"><a href="#" class="nav-link text-white">Galeria</a></li>
+            <li class="nav-item"><a href="#" class="nav-link text-white">Contacto</a></li>
+          </ul>
+
+          <form class="d-none d-sm-flex gap-2" role="search">
+            <input 
+              type="search" 
+              placeholder="Type here..." 
+              aria-label="Search"
+              class="form-control nav-search"
+            >
+            <button class="btn btn-outline-light search-btn" type="submit">Search</button>
+          </form>
+        </div>
       </div>
     </nav>
-    <section>
+
+    <!-- Hero Image Section -->
+    <section class="w-100">
       <img 
-      src="./img/principal.jpg"
-      alt="hero-image"
-      class="hero-img"
+        src="./img/principal.jpg" 
+        alt="hero-image" 
+        class="img-fluid w-100 hero-img"
       >
     </section>
     
     <!-- Main Section --> 
-    <main class="main-content">
-      <h2 class="subtitle">Nuestros productos</h2>
+    <main class="container py-5">
+      <h2 class="text-center mb-4">Nuestros productos</h2>
 
-      <!--Primer Articulo-->
-      <section class="main-section">
-        <article class="horizontal-article">
-          <div>
+      <!-- Primer Articulo -->
+      <section class="mb-5">
+        <article class="row g-0 overflow-hidden shadow-sm">
+          <div class="col-md-6">
             <img 
               src="./img/producto1.jpg"
               alt="product-01"
-              class="article-img"
+              class="img-fluid w-100 h-100 object-fit-cover article-img"
             >
           </div>
-          <div class="article-description">
-            <h3 class="product-title">Producto 1</h3>
-            <p class="desc-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <span class="price-tag">$12,000</span>
-            <button class="cart-btn">Agregar al carrito</button>
+          <div class="col-md-6 custom-bg-primary text-white p-4 d-flex flex-column justify-content-center align-items-center text-center">
+            <h3 class="mb-3">Producto 1</h3>
+            <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <span class="fs-4 fw-bold mb-3">$12,000</span>
+            <button class="btn custom-btn-green text-white px-4 py-2">Agregar al carrito</button>
           </div>
         </article>
       </section>
 
       <!-- Segundo y Tercer Articulo -->
-      <section class="main-section-grid">
-        <article class="vertical-article">
-          <div>
+      <section class="row g-4 mb-5">
+        <div class="col-md-6">
+          <article class="card h-100 border-0 rounded-0 overflow-hidden shadow-sm">
             <img 
               src="./img/producto2.jpg"
               alt="product-02"
-              class="article-img"
+              class="card-img-top rounded-0 object-fit-cover article-img"
             >
-          </div>
-          <div class="article-description">
-            <h3 class="product-title">Producto 2</h3>
-            <p class="desc-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <span class="price-tag">$12,000</span>
-            <button class="cart-btn">Agregar al carrito</button>
-          </div>
-        </article>
-        <article class="vertical-article">
-          <div>
+            <div class="card-body custom-bg-primary text-white p-4 d-flex flex-column align-items-center text-center">
+              <h3 class="card-title mb-3">Producto 2</h3>
+              <p class="card-text mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <span class="fs-4 fw-bold mt-auto mb-3">$12,000</span>
+              <button class="btn custom-btn-green text-white px-4 py-2">Agregar al carrito</button>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-md-6">
+          <article class="card h-100 border-0 rounded-0 overflow-hidden shadow-sm">
             <img 
               src="./img/producto3.jpg"
               alt="product-03"
-              class="article-img"
+              class="card-img-top rounded-0 object-fit-cover article-img"
             >
-          </div>
-          <div class="article-description">
-            <h3 class="product-title">Producto 3</h3>
-            <p class="desc-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <span class="price-tag">$12,000</span>
-            <button class="cart-btn">Agregar al carrito</button>
-          </div>
-        </article>
+            <div class="card-body custom-bg-primary text-white p-4 d-flex flex-column align-items-center text-center">
+              <h3 class="card-title mb-3">Producto 3</h3>
+              <p class="card-text mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <span class="fs-4 fw-bold mt-auto mb-3">$12,000</span>
+              <button class="btn custom-btn-green text-white px-4 py-2">Agregar al carrito</button>
+            </div>
+          </article>
+        </div>
       </section>
 
       <!-- Cuarto, Quinto y Sexto Articulo -->
-      <section class="main-section-grid">
-        <article class="vertical-article">
-          <img 
-            src="./img/producto4.jpg" 
-            alt="product-04"
-            class="article-img"
-          >
-          <div class="article-description">
-            <h3 class="product-title">Producto 4</h3>
-            <p class="desc-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <span class="price-tag">$12,000</span>
-            <button class="cart-btn">Agregar al carrito</button>
-          </div>
-        </article>
-        <article class="vertical-article">
-          <img 
-            src="./img/producto5.jpg" 
-            alt="product-05"
-            class="article-img"
-          >
-          <div class="article-description">
-            <h3 class="product-title">Producto 5</h3>
-            <p class="desc-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <span class="price-tag">$12,000</span>
-            <button class="cart-btn">Agregar al carrito</button>
-          </div>
-        </article>
-        <article class="vertical-article">
-          <img 
-            src="./img/producto6.jpg" 
-            alt="product-06"
-            class="article-img"
-          >
-          <div class="article-description">
-            <h3 class="product-title">Producto 6</h3>
-            <p class="desc-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <span class="price-tag">$12,000</span>
-            <button class="cart-btn">Agregar al carrito</button>
-          </div>
-        </article>
+      <section class="row g-4 mb-5">
+        <div class="col-md-4">
+          <article class="card h-100 border-0 rounded-0 overflow-hidden shadow-sm">
+            <img 
+              src="./img/producto4.jpg" 
+              alt="product-04"
+              class="card-img-top rounded-0 object-fit-cover article-img"
+            >
+            <div class="card-body custom-bg-primary text-white p-4 d-flex flex-column align-items-center text-center">
+              <h3 class="card-title mb-3">Producto 4</h3>
+              <p class="card-text mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <span class="fs-4 fw-bold mt-auto mb-3">$12,000</span>
+              <button class="btn custom-btn-green text-white px-4 py-2">Agregar al carrito</button>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-md-4">
+          <article class="card h-100 border-0 rounded-0 overflow-hidden shadow-sm">
+            <img 
+              src="./img/producto5.jpg" 
+              alt="product-05"
+              class="card-img-top rounded-0 object-fit-cover article-img"
+            >
+            <div class="card-body custom-bg-primary text-white p-4 d-flex flex-column align-items-center text-center">
+              <h3 class="card-title mb-3">Producto 5</h3>
+              <p class="card-text mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <span class="fs-4 fw-bold mt-auto mb-3">$12,000</span>
+              <button class="btn custom-btn-green text-white px-4 py-2">Agregar al carrito</button>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-md-4">
+          <article class="card h-100 border-0 rounded-0 overflow-hidden shadow-sm">
+            <img 
+              src="./img/producto6.jpg" 
+              alt="product-06"
+              class="card-img-top rounded-0 object-fit-cover article-img"
+            >
+            <div class="card-body custom-bg-primary text-white p-4 d-flex flex-column align-items-center text-center">
+              <h3 class="card-title mb-3">Producto 6</h3>
+              <p class="card-text mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <span class="fs-4 fw-bold mt-auto mb-3">$12,000</span>
+              <button class="btn custom-btn-green text-white px-4 py-2">Agregar al carrito</button>
+            </div>
+          </article>
+        </div>
       </section>
 
       <!-- Categorias -->
-      <h2 class="subtitle">Categorías</h2>
-      <section class="main-section-grid">
-        <article class="vertical-category">
-          <img 
-            src="./img/categoria1.jpg" 
-            alt="Oficina-img"
-            class="article-img"
-          >
-          <div class="category">
-            <h2 class="category-title">Oficina</h2>
-          </div>
-        </article>
-        <article class="vertical-category">
-          <img 
-            src="./img/categoria2.jpg" 
-            alt="Hogar-img"
-            class="article-img"
-          >
-          <div class="category">
-            <h2 class="category-title">Hogar</h2>
-          </div>
-        </article>
-        <article class="vertical-category">
-          <img 
-            src="./img/categoria3.jpg" 
-            alt="Cocina-img"
-            class="article-img"
-          >
-          <div class="category">
-            <h2 class="category-title">Cocina</h2>
-          </div>
-        </article>
+      <h2 class="text-center mb-4">Categorías</h2>
+      <section class="row g-4">
+        <div class="col-md-4">
+          <article class="card border-0 rounded-0 overflow-hidden shadow-sm">
+            <img 
+              src="./img/categoria1.jpg" 
+              alt="Oficina-img"
+              class="card-img-top rounded-0 object-fit-cover article-img"
+            >
+            <div class="card-body custom-bg-secondary py-3 text-center">
+              <h3 class="category-title h4 mb-0">Oficina</h3>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-md-4">
+          <article class="card border-0 rounded-0 overflow-hidden shadow-sm">
+            <img 
+              src="./img/categoria2.jpg" 
+              alt="Hogar-img"
+              class="card-img-top rounded-0 object-fit-cover article-img"
+            >
+            <div class="card-body custom-bg-secondary py-3 text-center">
+              <h3 class="category-title h4 mb-0">Hogar</h3>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-md-4">
+          <article class="card border-0 rounded-0 overflow-hidden shadow-sm">
+            <img 
+              src="./img/categoria3.jpg" 
+              alt="Cocina-img"
+              class="card-img-top rounded-0 object-fit-cover article-img"
+            >
+            <div class="card-body custom-bg-secondary py-3 text-center">
+              <h3 class="category-title h4 mb-0">Cocina</h3>
+            </div>
+          </article>
+        </div>
       </section>
     </main>
 
     <!-- Footer Section -->
-    <footer>
-      <section class="footer-section">
-        <article class="footer-article">
-          <h3 class="nav-footer-title">Categorias</h3>
-          <nav>
-            <ul class="nav-footer-menu">
-              <li><a href="#" class="nav-footer-link">Cocina</a></li>
-              <li><a href="#" class="nav-footer-link">Oficina</a></li>
-              <li><a href="#" class="nav-footer-link">Jardín</a></li>
-              <li><a href="#" class="nav-footer-link">Cochera</a></li>
-              <li><a href="#" class="nav-footer-link">Dormitorios</a></li>
-            </ul>
-          </nav>
-        </article>
-        <article class="footer-article">
-          <h3 class="nav-footer-title">Sobre Nosotros</h3>
-          <nav>
-            <ul class="nav-footer-menu">
-              <li><a href="#" class="nav-footer-link">Nuestra Historia</a></li>
-              <li><a href="#" class="nav-footer-link">Misión, Visión y Valores</a></li>
-              <li><a href="#" class="nav-footer-link">Carrera</a></li>
-              <li><a href="#" class="nav-footer-link">Politicas de Privacidad</a></li>
-              <li><a href="#" class="nav-footer-link">Terminos del servicio</a></li>
-            </ul>
-          </nav>
-        </article>
-        <article class="footer-article">
-          <h3 class="nav-footer-title">Soporte</h3>
-          <nav>
-            <ul class="nav-footer-menu">
-              <li><a href="#" class="nav-footer-link">Preguntas frecuentes</a></li>
-              <li><a href="#" class="nav-footer-link">Ayuda en linea</a></li>
-              <li><a href="#" class="nav-footer-link">Confianza y seguridad</a></li>
-            </ul>
-          </nav>
-        </article>
+    <footer class="mt-auto">
+      <section class="custom-bg-dark text-white py-5">
+        <div class="container">
+          <div class="row g-4 text-center">
+            <article class="col-md-4">
+              <h3 class="h5 mb-3">Categorías</h3>
+              <nav>
+                <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
+                  <li><a href="#" class="text-white text-decoration-none">Cocina</a></li>
+                  <li><a href="#" class="text-white text-decoration-none">Oficina</a></li>
+                  <li><a href="#" class="text-white text-decoration-none">Jardín</a></li>
+                  <li><a href="#" class="text-white text-decoration-none">Cochera</a></li>
+                  <li><a href="#" class="text-white text-decoration-none">Dormitorios</a></li>
+                </ul>
+              </nav>
+            </article>
+
+            <article class="col-md-4">
+              <h3 class="h5 mb-3">Sobre Nosotros</h3>
+              <nav>
+                <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
+                  <li><a href="#" class="text-white text-decoration-none">Nuestra Historia</a></li>
+                  <li><a href="#" class="text-white text-decoration-none">Misión, Visión y Valores</a></li>
+                  <li><a href="#" class="text-white text-decoration-none">Carrera</a></li>
+                  <li><a href="#" class="text-white text-decoration-none">Políticas de Privacidad</a></li>
+                  <li><a href="#" class="text-white text-decoration-none">Términos del servicio</a></li>
+                </ul>
+              </nav>
+            </article>
+
+            <article class="col-md-4">
+              <h3 class="h5 mb-3">Soporte</h3>
+              <nav>
+                <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
+                  <li><a href="#" class="text-white text-decoration-none">Preguntas frecuentes</a></li>
+                  <li><a href="#" class="text-white text-decoration-none">Ayuda en línea</a></li>
+                  <li><a href="#" class="text-white text-decoration-none">Confianza y seguridad</a></li>
+                </ul>
+              </nav>
+            </article>
+          </div>
+        </div>
       </section>
-      <section class="footer-section">
-        <h2 class="copy-text">Todos los derechos reservados. Tienda de Muebles</h2>
+
+      <section class="custom-bg-surface text-white py-3 text-center">
+        <p class="mb-0 small">Todos los derechos reservados. Tienda de Muebles</p>
       </section>
     </footer>
 
-    <script src="./main.js"></script>
+    <!-- Bootstrap Script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
 </html>
